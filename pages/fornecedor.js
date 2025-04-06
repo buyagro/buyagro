@@ -1,13 +1,15 @@
+import Layout from '../components/Layout';
+
 export default function Fornecedor() {
   return (
-    <div style={{ padding: 20 }}>
+    <Layout>
       <h2>Área do Fornecedor</h2>
-      <p>Envie seus preços para as cotações em andamento:</p>
+      <p>Simule o envio de proposta para a cotação de:</p>
       <ul>
-        <li>Produto: Glifosato 480 SL</li>
-        <li>Volume solicitado: 12.000L</li>
+        <li>Glifosato 480 SL – Volume estimado: 12.000L</li>
+        <li>Cletodim – Volume estimado: 8.000L</li>
       </ul>
-      <p><i>(simulação)</i></p>
-    </div>
+      <p><i>Área de envio de preços será implementada em versão futura.</i></p>
+    </Layout>
   );
 }

@@ -1,16 +1,29 @@
+import { useState } from 'react';
+import Layout from '../components/Layout';
+
 export default function Produtor() {
+  const [nome, setNome] = useState('');
+  const [produto, setProduto] = useState('Glifosato');
+  const [volume, setVolume] = useState('');
+
+  const gerarPedido = () => {
+    const msg = \`Olá, sou \${nome}, quero \${volume}L de \${produto} pelo preço negociado.\`;
+    const link = \`https://wa.me/5561999999999?text=\${encodeURIComponent(msg)}\`;
+    window.open(link, '_blank');
+  };
+
   return (
-    <div style={{ padding: 20 }}>
-      <h2>Bem-vindo, Produtor</h2>
-      <p>Confira as cotações disponíveis:</p>
-      <ul>
-        <li>Glifosato 480 SL – R$ 17,70/L (volume total: 12.000L)</li>
-        <li>Cletodim 240 EC – R$ 34,90/L (volume total: 6.200L)</li>
-      </ul>
-      <p>Deseja participar? Clique no botão abaixo:</p>
-      <a href="https://wa.me/5561999999999?text=Quero+participar+da+compra+coletiva+de+Glifosato" target="_blank">
-        <button>Gerar Pedido e Enviar via WhatsApp</button>
-      </a>
-    </div>
+    <Layout>
+      <h2>Área do Produtor</h2>
+      <input placeholder="Seu nome" value={nome} onChange={e => setNome(e.target.value)} /><br />
+      <select value={produto} onChange={e => setProduto(e.target.value)} style={{ marginTop: 10 }}>
+        <option>Glifosato</option>
+        <option>Cletodim</option>
+        <option>2,4-D</option>
+        <option>Fox Xpro</option>
+      </select><br />
+      <input placeholder="Volume desejado (L)" value={volume} onChange={e => setVolume(e.target.value)} /><br />
+      <button style={{ marginTop: 10 }} onClick={gerarPedido}>Autorizar Compra / WhatsApp</button>
+    </Layout>
   );
 }

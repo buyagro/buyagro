@@ -1,15 +1,32 @@
+import Layout from '../components/Layout';
+
 export default function Admin() {
   return (
-    <div style={{ padding: 20 }}>
+    <Layout>
       <h2>Painel Administrativo</h2>
-      <p>Produtores participantes:</p>
-      <ul>
-        <li>João Lima – 400L</li>
-        <li>Carlos Mendes – 600L</li>
-        <li>Fernanda Alves – 300L</li>
-      </ul>
-      <p>Volume total: 1.300L</p>
-      <p>Melhor preço: R$ 17,70/L (Fornecedor CampoVerde)</p>
-    </div>
+      <table border="1" cellPadding="8">
+        <thead>
+          <tr>
+            <th>Produtor</th>
+            <th>Produto</th>
+            <th>Volume (L)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>João Lima</td>
+            <td>Glifosato</td>
+            <td>400</td>
+          </tr>
+          <tr>
+            <td>Carlos Mendes</td>
+            <td>Cletodim</td>
+            <td>600</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style={{ marginTop: 10 }}><strong>Volume total:</strong> 1000L</p>
+      <p><strong>Melhor preço atual:</strong> R$ 17,70/L</p>
+    </Layout>
   );
 }
