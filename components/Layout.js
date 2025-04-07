@@ -1,14 +1,19 @@
-import Link from 'next/link';
-
 export default function Layout({ children }) {
   return (
     <div>
-      <header style={{ backgroundColor: '#0a4', padding: '10px 20px', color: '#fff', fontSize: 20 }}>
-        <span style={{ fontWeight: 'bold' }}>BuyAgro</span> — Conectando Produtores
+      <header style={{
+        backgroundColor: '#003366',
+        padding: '10px 20px',
+        color: '#fff',
+        fontSize: 24,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between'
+      }}>
+        <span style={{ fontWeight: 'bold' }}>BuyAgro</span>
+        <span style={{ fontSize: 14, fontStyle: 'italic' }}>Conectando Produtores</span>
       </header>
-      <main style={{ padding: 20 }}>
-        {children}
-      </main>
+      <main style={{ padding: '30px' }}>{children}</main>
     </div>
   );
 }
